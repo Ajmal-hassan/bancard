@@ -15,6 +15,7 @@ module Bancard
       {
         operation:  operation_params,
         public_key: public_key,
+        test_client: true
       }
     end
 
@@ -41,7 +42,7 @@ module Bancard
     end
 
     def amount
-      given_params['amount_in_cents'].to_i / 100.0
+      given_params['amount'].to_f
     end
 
     def shop_process_id

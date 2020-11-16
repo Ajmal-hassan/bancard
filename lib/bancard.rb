@@ -27,7 +27,7 @@ module Bancard
   end
 
   def self.vpos_url(path = nil)
-    uri      = URI.parse(sandbox? ? TEST_URL : LIVE_URL)
+    uri      = URI.parse(sandbox! ? TEST_URL : LIVE_URL)
     uri.path = path.to_s
     uri.to_s
   end
